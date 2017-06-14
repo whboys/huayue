@@ -1,3 +1,8 @@
+动态网站：数据的呈现，不同的情况、不同的人、不同的地域呈现数据不一样
+静态网站：就没有数据存储和交互的网站
+表单：收集用户数据，方便运营的时候的数据交互。
+
+
 HTML 列表
 HTML 支持有序、无序和定义列表:
 
@@ -13,13 +18,6 @@ HTML 支持有序、无序和定义列表:
 <li>Milk</li>
 </ol>
 
-自定义列表
-<dl>
-<dt>Coffee</dt>
-<dd>- black hot drink</dd>
-<dt>Milk</dt>
-<dd>- white cold drink</dd>
-</dl>
 
 
 HTML <div> 和<span>

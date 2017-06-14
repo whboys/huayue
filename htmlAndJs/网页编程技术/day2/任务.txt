@@ -1,43 +1,40 @@
-CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式.
+什么是HTTP
+http://baike.baidu.com/link?url=aLDNNmfAaKKpBfnuf5AP9l2kxYucauFhnoAOxFkVWdkSDC9MbPPXtZuxV05V7kGcf6p9Te-i2FvPj4AtO8G5Xa
+和html（HyperText Market Language）配合使用
 
-如何应用CSS
-CSS 可以通过以下方式添加到HTML中:
-内联样式- 在HTML元素中使用"style" 属性
-内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
-外部引用 - 使用外部 CSS 文件
 
-列子
-背景色属性（background-color）定义一个元素的背景颜色：
-<body style="background-color:yellow;">
-<h2 style="background-color:red;">这是一个标题</h2>
-<p style="background-color:green;">这是一个段落。</p>
-</body>
+Http定义了与服务器交互的不同方法，最基本的方法有4种，分别是GET，POST，PUT，DELETE。URL全称是资源描述符，
+我们可以这样认为：一个URL地址，它用于描述一个网络上的资源，
+而HTTP中的GET，POST，PUT，DELETE就对应着对这个资源的查，改，增，删4个操作。
 
-字体, 字体颜色 ，字体大小
-<h1 style="font-family:verdana;">一个标题</h1>
-<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+    1.很多人贪方便，更新资源时用了GET，因为用POST必须要到FORM（表单），这样会麻烦一点。
 
-文本对齐方式
-<h1 style="text-align:center;">居中对齐的标题</h1>
-<p>这是一个段落。</p>
+　　2.对资源的增，删，改，查操作，其实都可以通过GET/POST完成，不需要用到PUT和DELETE。
 
-内部样式表
-<head>
-<style type="text/css">
-body {background-color:yellow;}
-p {color:blue;}
-</style>
-</head>
+　　3.另外一个是，早期的Web MVC框架设计者们并没有有意识地将URL当作抽象的资源来看待和设计，所以导致一个比较严重的问题是传统的Web 
+       MVC框架基本上都只支持GET和POST两种HTTP方法，而不支持PUT和DELETE方法。
 
-已弃用的标签和属性
-在HTML 4, 原来支持定义HTML元素样式的标签和属性已被弃用。这些标签将不支持新版本的HTML标签。
-不建议使用的标签有: <font>, <center>, <strike>
-不建议使用的属性: color 和 bgcolor.
+
+实际操作 
+method="get|post"
+
+<select>
+<option value="1" selected></option>
+</select>
+
+<input type="radio" checked="checked" />
+<input type="checkbox" checked />
+input 标签的 value属性
+
 
 在 HTML 中，图像由<img> 标签定义。
 最重要的属性（src）。src 指 "source"。
 alt 属性用来为图像定义一串预备的可替换的文本, 无法载入图像时，替换文本属性告诉读者她们失去的信息
 height（高度） 与 width（宽度）属性用于设置图像的高度与宽度。
+
+
+
+
 
 HTML 表格
  Cell padding 来创建单元格内容与其边框之间的空白。
@@ -47,7 +44,7 @@ HTML 表格
 <html>
 <head> 
 <meta charset="utf-8"> 
-<title>菜鸟教程(runoob.com)</title> 
+<title>列表元素</title> 
 </head>
 <body>
 
@@ -94,3 +91,35 @@ HTML 表格
 colspan
 rowspan
 任务用table做一个一周课程表
+
+
+CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式.
+
+如何应用CSS
+CSS 可以通过以下方式添加到HTML中:
+内联样式- 在HTML元素中使用"style" 属性
+内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
+外部引用 - 使用外部 CSS 文件
+
+列子
+背景色属性（background-color）定义一个元素的背景颜色：
+<body style="background-color:yellow;">
+<h2 style="background-color:red;">这是一个标题</h2>
+<p style="background-color:green;">这是一个段落。</p>
+</body>
+
+字体, 字体颜色 ，字体大小
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+
+文本对齐方式
+<h1 style="text-align:center;">居中对齐的标题</h1>
+<p>这是一个段落。</p>
+
+内部样式表
+<head>
+<style type="text/css">
+body {background-color:yellow;}
+p {color:blue;}
+</style>
+</head>
