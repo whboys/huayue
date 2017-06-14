@@ -1,0 +1,92 @@
+HTML 框架
+一．HTML 框架
+<iframe src="URL"></iframe>
+<frameset cols="25%,50%,25%">
+  <frame src="frame_a.htm" />
+  <frame src="frame_b.htm" />
+  <frame src="frame_c.htm" />
+</frameset>
+1 内联式：
+<style type='text/css'>
+
+</style>
+2 嵌入式：
+<div style=""></div>
+3 外联式：可以使HTML页面更为简洁
+在文件目录下面新建一个css的文件夹
+在文件夹里面新建一个xx.css的文件，样式就写在里面
+在head里面用<link href="css/demo.css" rel="stylesheet"/>引入一个外部样式
+
+四个基础选择器：
+标签选择器：
+    A{
+        凡是标签名是A的标签都能读到A里面的样式
+    }
+类选择器
+    .c{
+       凡是标签里面class='c'的标签都能读到样式
+    }
+ID选择器
+    #d{
+        凡是标签里面id='d'的标签都能读到样式
+    }
+全选择器
+    *{
+        所有的标签都执行里面的样式
+    }
+
+选择器的优先级：ID选择器>类选择器>标签选择器>*选择器
+
+css遵循选择器的优先级，还遵循就近原则。
+
+
+布局里面的第一个：
+  浮动：float  取值left或者right
+  清除浮动 clear:both
+外补白：
+    margin 是边框和外面的距离
+内补白：
+    padding 内容和边框的距离
+
+
+伪类:
+点击前
+ a:link{
+    color: #999999;
+}
+点击后
+ a:visited{
+    color: #FFFC01;
+}
+鼠标悬停
+ a:hover{
+    color: red;
+}
+点击时
+ a:active{
+    color: green;
+}
+
+迭代选择器：
+
+
+
+
+事件
+onblur
+onfocus
+onload
+onchange
+onfocus
+onsubmit
+onkeydown
+onkeypress
+onkeyup
+onclick
+ondblclick
+onmousedown
+onmousemove
+onmouseout
+onmouseover
+onmouseup
+

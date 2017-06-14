@@ -3,6 +3,9 @@
 表单：收集用户数据，方便运营的时候的数据交互。
 
 
+颜色
+http://www.runoob.com/html/html-colors.html
+
 HTML 列表
 HTML 支持有序、无序和定义列表:
 
