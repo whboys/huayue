@@ -1,0 +1,96 @@
+CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式.
+
+如何应用CSS
+CSS 可以通过以下方式添加到HTML中:
+内联样式- 在HTML元素中使用"style" 属性
+内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
+外部引用 - 使用外部 CSS 文件
+
+列子
+背景色属性（background-color）定义一个元素的背景颜色：
+<body style="background-color:yellow;">
+<h2 style="background-color:red;">这是一个标题</h2>
+<p style="background-color:green;">这是一个段落。</p>
+</body>
+
+字体, 字体颜色 ，字体大小
+<h1 style="font-family:verdana;">一个标题</h1>
+<p style="font-family:arial;color:red;font-size:20px;">一个段落。</p>
+
+文本对齐方式
+<h1 style="text-align:center;">居中对齐的标题</h1>
+<p>这是一个段落。</p>
+
+内部样式表
+<head>
+<style type="text/css">
+body {background-color:yellow;}
+p {color:blue;}
+</style>
+</head>
+
+已弃用的标签和属性
+在HTML 4, 原来支持定义HTML元素样式的标签和属性已被弃用。这些标签将不支持新版本的HTML标签。
+不建议使用的标签有: <font>, <center>, <strike>
+不建议使用的属性: color 和 bgcolor.
+
+在 HTML 中，图像由<img> 标签定义。
+最重要的属性（src）。src 指 "source"。
+alt 属性用来为图像定义一串预备的可替换的文本, 无法载入图像时，替换文本属性告诉读者她们失去的信息
+height（高度） 与 width（宽度）属性用于设置图像的高度与宽度。
+
+HTML 表格
+ Cell padding 来创建单元格内容与其边框之间的空白。
+ Cell spacing 增加单元格之间的距离。
+ 
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+
+<h4>没有单元格边距:</h4>
+<table border="1">
+<caption>标题</caption>
+<th>第一列表头</th>
+<th>第二列表头</th>
+<tr>
+  <td>First</td>
+  <td>Row</td>
+</tr>   
+<tr>
+  <td>Second</td>
+  <td>Row</td>
+</tr>
+</table>
+
+<h4>有单元格边距:</h4>
+<table border="0" cellspacing="10" cellpadding="10">
+<tr>
+  <td>First</td>
+  <td>Row</td>
+</tr>   
+<tr>
+  <td>Second</td>
+  <td>Row</td>
+</tr>
+</table>
+
+</body>
+</html>
+
+
+<table>	定义表格
+<th>	定义表格的表头
+<tr>	定义表格的行
+<td>	定义表格单元
+<caption>	定义表格标题
+<col>	定义用于表格列的属性
+<thead>	定义表格的页眉
+<tbody>	定义表格的主体
+<tfoot>	定义表格的页脚
+colspan
+rowspan
+任务用table做一个一周课程表

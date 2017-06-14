@@ -1,0 +1,39 @@
+1.什么是Javascript
+	JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。
+	JavaScript 是一种轻量级的编程(脚本)语言。
+	JavaScript 是可插入 HTML 页面的编程代码。
+	JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。
+	JavaScript 很容易学习。
+	
+开始学习
+document.write
+
+事件
+	当用户点击鼠标时 onclick
+	鼠标按下时 onmousedown， onmouseup
+	当网页已加载时onload ， onunload（离开时）
+	获得离开焦点 onfocus， onblur
+	当光标离开元素时 onmouseover 
+	当提交 HTML 表单时 onsubmit
+	当用户触发按键时 onkeydown
+	onmouseover 和 onmouseout 事件
+
+运算符
+	=  +  -  *  /
+	==  != <  > 
+	
+注释
+	// /* */
+	
+数据类型
+	字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
+	
+函数
+	语句可以写在函数内，函数可以重复引用
+	function myFun(){
+		
+	}
+	
+字母大小写
+	大小写敏感,getElementById 等
+	
