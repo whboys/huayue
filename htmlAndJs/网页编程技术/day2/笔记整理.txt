@@ -1,0 +1,122 @@
+一。常用标签
+HTML（Hyper Text Markup language） 超文本标记语言
+1.主干部分
+<html>
+	<head></head>
+	<body></body>
+</html>
+
+2.<head>标签下的重要标签
+<meta  />是单标签：作用一般三个
+  <meta charset="utf-8" />
+  <meta keywords="关键词" />
+  <meta description="描述" />
+  
+3.标题标签，字体大小依次由大到小
+	<h1></h1>...<h6></h6>
+4.段落标签：
+	<p></p>, <br />, <hr>
+5.居中标签，<center></center>，在HTML5中已经淘汰，代替方式
+	<body style="text-align:center">...</body>
+
+6. 空格&nbsp;
+7.<font></font> 字体标签(在HTML5中已经淘汰)
+	size:大小（1-7）
+	color: 颜色
+	
+8.加粗标签：<b></b>, <strong></strong>
+9.<u></u>下划线标签， <i></i>斜体标签
+10. <a></a>标签
+	超链接标签，用于页面跳转
+	常用属性：  href="跳转地址"，
+				target="打开方式", _blank（新窗口打开）, _self(当前窗口打开：默认值)
+11.<img></img>
+	图片标签, 常用属性：
+	src="图片路径"
+	alt="美女"，用于给蜘蛛抓取
+	title="显示描述"
+	width="宽度"
+	height="高度"
+
+
+二。表单与控件
+
+1.表单
+<form>...表单控件...</from>
+	1)表单常用属性
+		action="处理内容的页面的页面地址"
+		method="GET|POST" 
+		GET：方式是用地址栏（显示）提交数据，最多提交字符长度256KB
+		POST：表单方式（隐式）提交，理论是没有限制的
+
+1.文本域控件
+	<input type="text">
+	主要属性
+	name="名字"， 定义一个和其它文本框区别的名称
+	value="值"，  文本域的内容
+2.密码控件
+	<input type="password" />
+	和文本域控件类似
+3.按钮
+	普通按钮
+	1)<input type="button" />
+		重要属性：
+		name="别名" 
+		value="值"
+		onclick="单击事件" （扩展部分）点击的时候促发javascript代码
+	2)提交按钮
+		<input type="submit" />
+		属性与button类似，本按钮用于执行提交命令（告诉form可以提交了）
+				
+	3)重置按钮
+		<input type="reset" />
+		属性与button类似，重置(还原)表单内容
+4.单选框
+	<input type="radio" />
+		常用属性：
+		name="名字", 用于按钮分组
+	    value="值"，用于提交保存的数据
+5.多选框
+	<input type="checkbox" />
+		常用属性
+		name="别名"
+		value="值"
+		
+6.下拉框
+	<select></select>
+	常用属性：
+	name="别名"
+	
+	子标签
+	<option value="cn" selected>中国</option>
+	<option value="en">英国</option>
+	常用属性:
+	value="当前标签的值"
+	selected : 当前标签为选中状态
+	样例:
+	<select name="guobie">
+	 <option value="">请选择国籍</option>
+	 <option value="cn" selected>中国</option>
+	 <option value="jp">日本</option>
+	</select>
+				
+
+7.多行文本域
+	<textarea></textarea>
+	常用属性：
+	cols 列数
+	rows 行数
+	name="别名"
+		
+8.不显示的表单控件
+	<input type="hidden" />
+		隐藏的表单控件
+		常用属性
+		name="别名"
+		value="值"
+9.禁止使用的属性
+	disabled
+	对所有的表单控件都有效
+	
+10.常用属性
+	placeholder="当前文本域的描述"
