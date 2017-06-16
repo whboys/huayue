@@ -9,8 +9,8 @@ HTML（Hyper Text Markup language） 超文本标记语言
 2.<head>标签下的重要标签
 <meta  />是单标签：作用一般三个
   <meta charset="utf-8" />
-  <meta keywords="关键词" />
-  <meta description="描述" />
+  <meta name="keywords" content="关键词" />
+  <meta name="description" content="描述" />
   
 3.标题标签，字体大小依次由大到小
 	<h1></h1>...<h6></h6>
