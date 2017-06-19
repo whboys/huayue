@@ -62,8 +62,8 @@ HTML 支持有序、无序和定义列表:
 colspan
 rowspan
 
-Cell padding 来创建单元格内容与其边框之间的空白。
-Cell spacing 增加单元格之间的距离。
+cellpadding 来创建单元格内容与其边框之间的空白。
+cellspacing 增加单元格之间的距离。
 任务用table做一个一周课程表
 
 
