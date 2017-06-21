@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>定位</title>
+
+<style>
+.div1{
+    background-color:red;
+    height:300px;
+    width:200px;
+    position:static;
+}
+.div2{
+    background-color:blue;
+    height:200px;
+    width:100%;
+    position:fixed;
+    top:10px;
+    z-index:-1;
+}
+
+.div3{
+    width:500px;
+    height:350px;
+    z-index:3;
+    position:relative;
+    background-color:green;
+}
+.div3:hover .img1{
+    display:block;
+}
+.img1{
+    top:10px;
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="div1">
+    我的内容
+</div>
+<div class="div2">
+ww
+</div>
+    
+<div class="div3">
+<p>wefwwe</p>
+<span>span</span>
+
+</div>
+
+<img class="img1" src="smiley.gif" />
+</body>
+</html>

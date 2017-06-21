@@ -1,34 +1,18 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8"> 
-<title>position</title> 
-<style>
-p.pos_fixed
-{
-	position:static;
-	top:300px;
-	right:50px;
-}
-h2
-{
-	position:absolute;
-	left:100px;
-    top:0px
-}
-div{
-	margin-left:80px;
-	height:200px;
-	
-}
-</style>
-</head>
 <body>
+<style>
+    #a:hover + #c{color : #f00; display:block;}
+    #c{
+        display:none;
+    }
+</style>
 
-<p class="pos_fixed">Some more text</p>
-<div></div>
-<h2>这是一个绝对定位了的标题</h2>
-
-
+<div id='a'>元素1
+  <div id='b'>元素2</div>
+  <div id='b'>元素2xx</div>
+</div>
+<div id='c'>元素3
+  <div id='d'>元素2xxxfeefwef</div>
+</div>
 </body>
 </html>

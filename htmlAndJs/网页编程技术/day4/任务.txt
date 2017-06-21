@@ -5,7 +5,7 @@ HTML 框架
     width
     height
     name
-    scrolling
+    scrolling="auto|yes|no"
     src
 
 一、什么是CSS
