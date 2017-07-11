@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array方法</title>
+</head>
+<body>
+   <script>
+       //concat 合并数组
+       var arr1 = new Array(3,5,8,'你好',80);//实例化一个数组对象【Array类的对象】
+
+       /*for(var i=0;i<arr1.length;i++){
+           console.log(arr1[i])
+       }*/
+       var arr2 = new Array(10,58,11,8);
+
+       var arr3 = arr1.concat(arr2);//返回值就是两个数组合并的结果
+
+       console.log(arr3);
+       //console.log(arr2);
+
+       //join 按指定分割符号，将数组的所有值串联起来返回一个新的字符串
+       console.log(arr2);
+       console.log(arr2.join(","));
+
+       //pop 移除数组的最后一个元素 并返回该元素值  并且过程中会改变原来的数组
+       console.log(arr2);
+       console.log(arr2.pop());
+       console.log(arr2);
+
+       //push 添加一个值到数组的末尾
+       arr2.push('showgirl');
+       console.log(arr2);
+
+       //reverse
+       console.log(arr2.reverse());
+
+       var arr4=new Array('ac',14,'ab','b3',12,'波','啊',21,25,18);
+       console.log(arr4.sort())
+
+
+
+   </script>
+</body>
+</html>

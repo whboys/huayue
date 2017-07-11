@@ -1,0 +1,51 @@
+Math对象的方法  abs ceil floor round max min random
+Date对象的方法  getFullYear getMonth.... getTime
+
+Array对象
+concat  方法 用于合并多个数组，方法有返回值，返回两个数组合并的结果，而非改变原有的某个数组
+join    方法 按指定分割符号，将数组的所有值串联起来返回一个新的字符串，当分隔符用‘,’的时候功能和toString()一样
+pop     方法 移除数组的最后一个单元 并返回该单元值  并且过程中会改变原来的数组
+push    方法 添加一个值到数组的末尾
+shift   方法 移除数组中的第一个元素并返回该元素
+sort    方法 数组排序
+unshift 方法 从数组的最开始插入一个元素
+
+String对象
+charAt:返回指定下表的字符【字符串从左到右的下标是0开始】
+charCodeAt：返回指定下标字符的ascii码
+indexOf: 查找指定的字符串，返回字符串的下标,可能为0，如果没有找到返回‘-1’
+substr: 截取字符串，指定开始位置，指定截取长度
+toLowerCase 方法:将字符串全部转化成小写
+toUpperCase 方法：将字符串全部转化成大写
+
+事件：
+http://www.w3school.com.cn/js/js_htmldom.asp
+onclick	    当用户点击某个对象时调用的事件句柄。
+ondblclick	当用户双击某个对象时调用的事件句柄。
+onblur	    元素失去焦点。
+onfocus	    元素获得焦点。
+onchange	域的内容被改变。
+
+onkeydown	某个键盘按键被按下。
+onkeypress	某个键盘按键被按下并松开。
+onkeyup	    某个键盘按键被松开。
+
+onmousedown	鼠标按钮被按下。
+onmousemove	鼠标被移动。
+onmouseout	鼠标从某元素移开。
+onmouseover	鼠标移到某元素之上。
+onmouseup	鼠标按键被松开。
+
+onabort	    图像的加载被中断。
+onerror	    在加载文档或图像时发生错误。
+
+onload	    一张页面或一幅图像完成加载。
+onresize	窗口或框架被重新调整大小。
+
+onreset	    重置按钮被点击。
+
+onselect	文本被选中。
+onsubmit	确认按钮被点击。
+onunload	用户退出页面。
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main,.input{
+            width: 200px;
+            height: 30px;
+            margin-top: 5px;
+            line-height: 30px;
+        }
+        .see{
+            width: 200px;
+            height: 300px;
+            margin-top: 5px;
+            line-height: 30px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body onload="">
+  <div class="see">看图说话</div>
+  <div class="main" onclick="test1(1);">点我看第1个月</div>
+  <div class="main" onclick="test1(2);">点我看第2个月</div>
+  <div class="main" onclick="test1(3);">点我看第3个月</div>
+  <div class="main" onclick="test1(4);">点我看第4个月</div>
+  <div class="main" onclick="test1(5);">点我看第5个月</div>
+  <div class="main" onclick="test1(6);">点我看第6个月</div>
+  <div class="main" onclick="test1(7);">点我看第7个月</div>
+  <div class="main" onclick="test1(8);">点我看第8个月</div>
+  <div class="main" ondblclick="test1(9);">点我看第9个月</div>
+
+  <input class="input" type="text" onfocus="have()" onblur="lost()" name="userName" placeholder="请输入用户名"/>
+  <br/>
+  <input class="input" type="button" value="我是按钮"/>
+  <br/>
+  单价：<input type="number" class="input" id="price" />
+  <br/>
+  数量：<input onblur="count()" type="number" class="input" id="number" />
+  <br/>
+  金额：<input type="number" class="input" id="totleMoney" />
+  <br/>
+  onchange：<input type="number" class="input" onchange="mychange()"  />
+  <br/>
+  onkeydown：<input type="number" class="input"  onkeydown="mydown()" />
+  <script type='text/javascript'>
+      function test1(month){
+          if(month<=2){
+              alert('兔子有一对');
+              return ;
+          }
+          var a=1;//上上个月
+          var b=1;//上个月
+          var d=0;//假设当月的兔子是0
+          for(var i=3;i<=month;i++){
+              d=a+b;
+              a=b;
+              b=d;
+          }
+          alert('第'+month+'月，兔子有'+d+'对');
+      }
+      function lost() {
+          //alert("我失去了你");
+      }
+      function have() {
+          //alert('I have a pen!');
+      }
+
+      
+      
+      function count() {
+          var p=document.getElementById("price");
+          var n=document.getElementById('number');
+          var price=parseInt(p.value);
+          var number=parseInt(n.value);
+          var t=document.getElementById('totleMoney');
+          t.value=price*number;
+      }
+
+      function mychange() {
+          alert("你改变了我的未来");
+      }
+      
+      function mydown() {
+          alert('轻轻点');
+      }
+  </script>
+</body>
+</html>
