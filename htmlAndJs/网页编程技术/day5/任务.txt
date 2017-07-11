@@ -213,9 +213,9 @@ CSS 指层叠样式表 (Cascading Style Sheets)
         9)CSS Positioning(定位)
             position 属性的四个值：
                 static      默认值，即没有定位，元素出现在正常的流中。
-                relative    相对定位元素的定位是相对其正常位置。
-                fixed       元素的位置相对于浏览器窗口是固定位置。
-                absolute    相对于最近的已定位父元素，如果元素没有已定位的父元素那么它的位置相对于HTML页面
+                relative    相对定位元素的定位，是相对其正常位置。
+                fixed       元素的位置相对于浏览器窗口。
+                absolute    相对于最近的已定位父元素，如果元素没有定位, 那么它的位置相对于HTML页面
         
         10)CSS 的 Float
             会使元素向左或向右移动，其周围的元素也会重新排列。
