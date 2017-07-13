@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式修改</title>
+    <style>
+        .main{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            }
+    </style>
+</head>
+<body>
+    <div class="main" id="main" style="" onclick="changeColor('red')"></div>
+    <input type="button" onclick="changeColor('blue')" value="蓝色"/>
+    <div  id="main1"></div>
+    <div  id="main2"></div>
+    <div  id="main3"></div>
+    <div  id="main4"></div>
+    <script>
+        //1.点击div本身的时候 改变背景颜色为红色
+        function changeColor(color) {
+            //我怎么知道改变哪个div的背景？怎么改变背景?
+            var d = document.getElementById("main");//d就是一个标签对象
+            //修改标签样式
+            d.style.backgroundColor=color;
+            
+        }
+        /*function changeColor2() {
+            var d = document.getElementById("main");//d就是一个标签对象
+            //修改标签样式
+            d.style.backgroundColor="blue";
+        }*/
+    </script>
+</body>
+</html>

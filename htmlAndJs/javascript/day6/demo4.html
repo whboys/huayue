@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    倒计时：<div style="width: 250px;height: 30px;color: red;" id="time">
+
+    </div>
+
+    <script>
+        function countDown() {
+            //倒计时
+            var d=new Date('2018-1-1');
+            var t1 = d.getTime();
+            var s=new Date();
+            var t2 = s.getTime();
+
+            var c =(t1-t2)/1000;//秒
+
+            var t = Math.floor(c/60/60/24);
+            var h = Math.floor(c/60/60)-t*24;
+            var f = Math.floor(c/60)-t*24*60-h*60;
+            var m = Math.floor(c%60);
+
+            var div = document.getElementById('time');
+            div.innerText='还剩'+t+'天'+h+'小时'+f+'分钟'+m+'秒';
+            setTimeout(countDown,1000);
+
+        }
+        setTimeout(countDown,1000);
+
+    </script>
+</body>
+</html>

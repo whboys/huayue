@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content{
+            width: 300px;
+            height:400px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    你输入的内容是：
+    <div id="content">
+        提示信息
+    </div>
+    <input type="button" onclick="changeText()" value="改变div的内容">
+    <input type="button" onclick="changeHTML()" value="改变div内部标签">
+    <script>
+        function changeText() {
+            var d=document.getElementById('content');
+            d.innerText='<a href="">看我七十二变</a>';
+        }
+        function changeHTML() {
+            var d=document.getElementById('content');
+            d.innerHTML='<a href="">看我七十二变</a>';
+        }
+    </script>
+
+    <p id="time"></p>
+    
+    <script>
+        function timeAuto() {
+            var time="";
+            var d=new Date();
+            time = time+d.getFullYear()+"年";
+            time = time+(d.getMonth()+1)+"月";
+            time = time+d.getDate()+"日&nbsp;";
+            time = time+d.getHours()+":";
+            time = time+d.getMinutes()+":";
+            time = time+d.getSeconds();
+            var p=document.getElementById('time');
+            p.innerHTML=time;
+            setTimeout(timeAuto,1000);
+        }
+        //timeAuto();
+        //setInterval(timeAuto,1000);//每隔1000毫秒  调用一次timeAuto函数
+        setTimeout(timeAuto,1000);//等待1000毫秒过后 执行一次timeAuto函数
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+通过JS去动态改变标签的样式
+
+标签对象：通过getElementById()
+
+//修改样式【石头人攻略】
+1. 通过document.getElementById('id')找到div对象，然后赋给一个变量
+2. 通过 变量名.style.属性名=属性值;
+前提：是函数和事件都要过关
+3. 修改标签对象的text文本信息  obj.innerText='需要改变的内容'; obj代表某一个标签对象
+注意：innerText修改的时候，后面的字符串中如果有标签“<a herf=''>文本</a>” 会把标签当成文本
+4. 如果需要在对象内部插入一段标签，那么需要使用 obj.innerHTML="<a herf=''>文本</a>";
+5. setInterval(timeAuto,1000); 每隔1000毫秒  调用一次timeAuto函数
+6. setTimeout(timeAuto,1000);  等待1000毫秒过后 执行一次timeAuto函数
