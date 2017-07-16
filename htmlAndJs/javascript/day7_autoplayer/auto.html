@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .autoplayer{
+            margin:0 auto;
+            width:790px;
+            height:340px;
+            background-color: red;
+            position: relative;
+        }
+        .autoplayer:hover .leftbtn{
+            opacity: 0.2;
+        }
+        .autoplayer:hover .rightbtn{
+            opacity: 0.2;
+        }
+        .leftbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            line-height: 60px;
+            text-align: center;
+            background-color: black;
+            opacity:0;
+        }
+        .leftimg{
+            display: none;
+        }
+
+        .leftbtn:hover .leftimg{
+            display: block;
+        }
+
+        .rightbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            right:0px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            opacity:0;
+        }
+
+        .rightimg{
+            display: none;
+        }
+        .rightbtn:hover .rightimg{
+            display: block;
+        }
+
+
+        .playbtn{
+            position: absolute;
+            width:182px;
+            height:20px;
+            bottom: 20px;
+            left: 215px;
+            border-radius: 12px;
+            background-color: aliceblue;
+        }
+        .playindex{
+            background-color: #fff;
+            height:18px;
+            width:18px;
+            opacity: 0.8;
+            border-radius: 12px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="autoplayer">
+<a class="leftbtn" href="#" onclick="autoPlay(1)"> <img class="leftimg" src="left.png" width="30" height="60" /> </a>
+    <img id="myimg" src="images/1.jpg" />
+    <div class="playbtn">
+        <div class="playindex"><a id="playindex1" href="#" onclick="setPlay(1)">1</a></div>
+        <div class="playindex"><a class="playindex" href="#" onclick="setPlay(2)" id="playindex2">2</a></div>
+        <div class="playindex"><a class="playindex" href="#" onclick="setPlay(3)" id="playindex3">3</a></div>
+        <div class="playindex"><a class="playindex" href="#" onclick="setPlay(4)" id="playindex4">4</a></div>
+        <div class="playindex"><a class="playindex" href="#" onclick="setPlay(5)" id="playindex5">5</a></div>
+    </div>
+<a class="rightbtn" href="#" onclick="autoPlay(0)"> <img class="rightimg" src="right.png" width="30" height="60" /> </a>
+</div>
+<input type="button" onclick="autoPlay(-1)" value="上一张" />
+<input type="button" onclick="autoPlay(0)" value="下一张" />
+<script>
+    var i = 2;
+    var idx = 1;
+    function autoPlay(p){
+
+        clearTimeout(s);
+        if(p>0){
+            i=p;
+        }else{
+            i++;
+        }
+        if(i<1){
+            i=5;
+        }
+        if(i>5){
+            i=1;
+        }
+        var myimg = document.getElementById("myimg");
+        myimg.src="images/"+i+".jpg";
+
+
+
+        s = setTimeout(autoPlay, 2000);
+    }
+    var s = setTimeout(autoPlay, 2000);
+
+
+    function setPlay(pic){
+        var myimg = document.getElementById("myimg");
+        myimg.src="images/"+pic+".jpg";
+    }
+</script>
+</body>
+</html>

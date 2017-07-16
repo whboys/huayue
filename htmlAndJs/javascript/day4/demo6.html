@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>undefined NaN NULL</title>
+</head>
+<body>
+   <script>
+       var arr=new Array();
+       if(typeof(arr[0])=='undefined'){
+           window.document.write('是undefined')
+       }
+       var num='qwe123xd12';
+       num=parseInt(num);
+       console.log(typeof(num));
+       console.log(num);
+       if(!isNaN(num)){
+           num=num+2;
+       }
+       var ob=null;
+       console.log(typeof(ob));
+       if(ob==null){
+           window.document.write("是")
+       }
+       var sc=window.prompt('输入成绩');
+       sc=parseInt(sc);
+
+
+
+   </script>
+</body>
+</html>

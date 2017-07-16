@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支</title>
+</head>
+<body>
+    <script>
+        //通过弹窗输入  进行赋值
+        var scrol=window.prompt("请输入你的分数");
+        //通过parseInt()转化类型
+        //console.log(typeof(scrol));
+        scrol=parseInt(scrol);
+        //console.log(typeof(scrol));
+        //scrol 根本不在0-100范围
+        if(scrol>=0 && scrol<=100){
+            //判断分数是A【90以上】B【80-90】C【60-80】D【60分以下】
+            if(scrol>=90){
+                //输出结果在body里面
+                window.document.write('你的分数在A段');
+            }
+            else if(scrol>=80 && scrol<90){
+                window.document.write('你的分数在B段');
+            }
+            else if(scrol>=60 && scrol<80){
+                window.document.write('你的分数在C段');
+            }
+            else{
+                window.document.write('你的分数在D段');
+            }
+        }
+        else{
+            window.document.write('你的输入错误');
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>话费</title>
+</head>
+<body>
+<script>
+   var time=1000;
+   var t1,t2,t3;
+   if(time-100>0){
+        t1=(time-100)*1+50;
+        if(t1>200){
+            t1=200;
+        }
+   }
+   if(time-100>0){
+       t2=(time-100)*0.85+50;
+   }
+   if(time<=100){
+       t1=50;
+       t2=50;
+   }
+   t3=time*0.75;
+   /*console.log(t1);
+   console.log(t2);
+   console.log(t3);*/
+
+   if(t1<=t2 && t1<=t3){
+       window.document.write("应该选第一种套餐");
+   }
+   else if(t2<=t1 && t2<=t3){
+       window.document.write("应该选第二种套餐");
+   }
+   else if(t3<=t1 && t3<=t2){
+       window.document.write("应该选第三种套餐");
+   }
+
+</script>
+</body>
+</html>

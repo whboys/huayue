@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支练习</title>
+</head>
+<body>
+<script>
+    //假设分钟数为50
+    var f=100;
+    //套餐1的算法
+    var t1=50;
+    if(f-100>0){
+        t1=(f-100)*1+50;
+        if(t1>=200){
+            t1=200;
+        }
+    }
+    //套餐2的算法
+    var t2=50;
+    if(f-100>0){
+        t2=(f-100)*0.85+50;
+    }
+    //套餐3的算法
+    var t3=f*0.75;
+
+    //演变成3个数字里面选最小的
+    if(t1<=t2&&t1<=t3){
+        window.document.write("你应该选择套餐1");
+    }
+    else if(t2<=t1&&t2<=t3){
+        window.document.write("你应该选择套餐2");
+    }
+    else{
+        window.document.write("你应该选择套餐3");
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var f=window.prompt("分钟数");
+    var t1=50;
+    if(f-100>0){t1=(f-100)*1+50;
+        if(t1>=200)
+            (t1=200)
+    }
+    var t2=50;
+    if(f-100>0 ){t2=(f-100)*0.85+50
+
+    }
+    var t3=f*0.75
+
+    if(t1<t2&&t1<t3){window.document.write('选第一种套餐')}
+    else if(t2<t1&&t2<t3){window.document.write('选第二种套餐')}
+    else if(t3<t2&&t3<t1){window.document.write('选第三种套餐')}
+
+</script>
+</body>
+</html>

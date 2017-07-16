@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支练习</title>
+</head>
+<body>
+<script>
+    //假设工资是10000
+    var money=5000;
+    var sm=money-3500;
+    var s=0;
+    if(sm>0&&sm<=1500){
+        s=sm*0.03-0;
+    }
+    else if(sm>1500&&sm<=4500){
+        s=sm*0.1-105;
+    }
+    else if(sm>4500&&sm<=9000){
+        s=sm*0.2-555;
+    }
+    else if(sm>9000&&sm<=35000){
+        s=sm*0.25-1005;
+    }
+    else if(sm>35000&&sm<=55000){
+        s=sm*0.3-2755;
+    }
+    else if(sm>55000&&sm<=80000){
+        s=sm*0.35-5505;
+    }
+    else if(sm>80000){
+        s=sm*0.45-13505;
+    }
+    window.document.write('你应该缴纳的个人所得税金额是'+s+"元");
+
+
+
+</script>
+</body>
+</html>

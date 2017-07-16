@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人所得税</title>
+</head>
+<body>
+<script>
+    var money=window.prompt("请输入你的税前工资");
+    var sm=money-3500;
+
+
+    var b;
+
+    if (sm<=1500){
+        b=sm*0.03;
+        window.document.write("扣除个人所得税，你的税后工资是"+(money-b)+"元");
+    }
+    else if(sm>1500&&sm<4500){
+        s=sm*0.1-105;
+        window.document.write("扣除个人所得税"+s+"元");
+    }
+    else if(sm>4500&&sm<9000)
+    {
+        b=sm*0.2-555;
+        window.document.write("扣除个人所得税，你的税后工资是"+(money-b)+"元");
+    }
+    else if(sm>9000&&sm<35000)
+    {
+        b=sm*0.25-4005;
+        window.document.write("扣除个人所得税，你的税后工资是"+(money-b)+"元");
+    }
+    else if(sm>35000&&sm<55000)
+    {
+        b = sm * 0.3 - 2755;
+        window.document.write("扣除个人所得税，你的税后工资是" + (money-b) + "元");
+    }
+    else if(sm>55000&&sm<80000)
+    {
+        b=sm*0.35-5505;
+        window.document.write("扣除个人所得税，你的税后工资是"+(money-b)+"元");
+    }
+    else if(sm>80000)
+    {
+        b=sm*0.45-13505;
+        window.document.write("扣除个人所得税,你的税后工资是"+(money-b)+"元");
+    }
+
+</script>
+</body>
+</html>

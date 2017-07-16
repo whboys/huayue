@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     冰淇淋
+     1-5个 原价
+     6-20个 9折
+     21-50个 8折
+     大于51个&&金额不超过700  7折
+     money>700元 6折
+     */
+    var number=40;//冰淇淋的个数
+    var price=5;//冰淇淋的单价
+    var discount=1;//假设折扣为1
+    var totle_money=number*price;
+    if(number>=6&&number<=20){
+        discount=0.9;
+    }
+    else if(number>=21&&number<=50){
+        discount=0.8;
+    }
+    else if(number>=51&&totle_money<=700){
+        discount=0.7;
+    }
+    else if(totle_money>700){
+        discount=0.6;
+    }
+    else{
+        discount=1;
+    }
+
+    totle_money=totle_money*discount;
+    window.document.write("你的付款金额是"+totle_money);
+
+    /*
+     某公司销售提成有以下几种类型。
+     一、有底薪制，底薪为1000元。提成8%当提成至5000时，无提成！
+     二、无底薪制，提成20% 当销售额至35000是无提成。
+     三、无底薪制提成不封顶制，提成15%。
+     我输入一个销售额，程序算出哪一种薪资最高
+
+     */
+    var money=50000;
+    var model1=1000;//底薪1000
+    var model2=0;
+    var model3=0;
+    if(money*0.08>5000){
+        model1=model1+5000;
+    }
+    else{
+        model1=model1+money*0.08;
+    }
+
+    if(money>35000){
+        model2=35000*0.2;
+    }
+    else{
+        model2=money*0.2;
+    }
+
+    model3=money*0.15;
+
+    if(model1>=model2&&model1>=model3){
+        window.document.write("<br/>请选择第一种模式");
+    }
+    else if(model2>model1&&model2>=model3){
+        window.document.write("<br/>请选择第二种模式");
+    }
+    else{
+        window.document.write("<br/>请选择第三种模式");
+    }
+
+    /*
+    * 车贷
+    * 现金首付如果够50%
+    * */
+    var car_parice=150000;
+    var payment=window.prompt("请输入你的首付金额");
+    payment=parseInt(payment);
+    if(car_parice/2<=payment){
+        window.document.write("可以购买");
+    }
+    else{
+        window.document.write("不能购买");
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

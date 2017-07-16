@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数 function</title>
+</head>
+<body>
+    <script>
+       /*
+*
+***
+*****
+*******
+*********
+        */
+
+       function create_graph(){
+           var str="*";
+           for(var i=1;i<=5;i++){
+               window.document.write(str+"<br/>");
+               str+="*";
+           }
+       }
+       /*create_graph();
+       create_graph();
+       create_graph();
+        */
+       //将两个数相加 需要在控制台输出两个数的和
+       function my_sum(a,b,c){//形参 形式参数
+           var d=a+b+c;
+           console.log(d);
+       }
+       //my_sum(1,2,3);//实际的参数叫实参
+
+
+       var a=15;
+       function mm(a,b) {
+           var c=a+b;
+           return c;
+       }
+
+       var s = mm(5,6);
+       console.log(s);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

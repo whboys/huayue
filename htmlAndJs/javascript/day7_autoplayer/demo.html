@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .autoplayer{
+            margin:0 auto;
+            width:790px;
+            height:340px;
+            background-color: red;
+            position: relative;
+        }
+        .autoplayer:hover .leftbtn{
+            opacity: 0.2;
+        }
+        .autoplayer:hover .rightbtn{
+            opacity: 0.2;
+        }
+
+        .leftbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            line-height: 60px;
+            text-align: center;
+            background-color: black;
+            opacity:0;
+        }
+
+
+
+
+        .rightbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            right:0px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            opacity:0;
+        }
+        .playbtn{
+            position: absolute;
+            height:20px;
+            bottom:20px;
+            left:325px;
+            border-radius: 12px;
+        }
+        .playindex{
+            background-color: #fff;
+            height:15px;
+            width:15px;
+            border-radius: 10px;
+            background-color: red;
+            float: left;
+            margin-left: 8px;
+
+        }
+        #myimg{
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+<div class="autoplayer">
+    <a class="leftbtn" onclick="_click()" id="left" href="javascript:void(0)"><img class="leftimg" src="left.png" width="30" height="60" /></a>
+    <img id="myimg" src="images/33W58PICNd7_1024.jpg" />
+    <div class="playbtn">
+        <div class="playindex" onmouseover="chilkNumber(0)" onmouseout="_start()"></div>
+        <div class="playindex" onmouseover="chilkNumber(1)" onmouseout="_start()"></div>
+        <div class="playindex" onmouseover="chilkNumber(2)" onmouseout="_start()"></div>
+        <div class="playindex" onmouseover="chilkNumber(3)" onmouseout="_start()"></div>
+        <div class="playindex" onmouseover="chilkNumber(4)" onmouseout="_start()"></div>
+        <div class="playindex" onmouseover="chilkNumber(5)" onmouseout="_start()"></div>
+    </div>
+    <a class="rightbtn" onclick="_right()" href="javascript:void(0)"><img class="rightimg" src="right.png" width="30" height="60" /> </a>
+</div>
+
+<script>
+    //给window对象 绑定一个onload事件 事件执行的代码在后面的匿名函数里面
+    window.onload=function () {
+        imgArr=new Array();
+        imgArr[0]='images/33W58PICNd7_1024.jpg';
+        imgArr[1]='images/79e58PICEtd.jpg';
+        imgArr[2]='images/140-150F1142638.jpg';
+        imgArr[3]='images/160P3142450-4.jpg';
+        imgArr[4]='images/R7JWG26XFT17.jpg';
+        imgArr[5]='images/u=2670750920,766573320&fm=214&gp=0.jpg';
+
+        img=document.getElementById('myimg');
+        //开始显示的是imgArr[0]这个图片
+        index=0;
+        //自动轮播
+        autoRun = setInterval(_right,2000);
+    }
+    //往右
+    function _right() {
+        index++;
+        if(index>=imgArr.length){
+            index=0;
+        }
+        img.src=imgArr[index];
+    }
+    //往左
+    function _click() {
+        index--;
+        if(index<0){
+            index=imgArr.length-1;
+        }
+        img.src=imgArr[index];
+    }
+    //点击具体的某个数字
+    function chilkNumber(num) {
+        img.src=imgArr[num];
+        //记录index
+        index=num;
+        //停止计时器
+        clearInterval(autoRun);
+        //autoRun = setInterval(_right,2000);
+    }
+    //开启计时器
+    function _start() {
+        autoRun = setInterval(_right,2000);
+    }
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
