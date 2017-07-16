@@ -48,8 +48,10 @@
             position: absolute;
             height:20px;
             bottom:20px;
+			line-height:20px;
             left:325px;
             border-radius: 12px;
+            background-color: hsla(0,0%,100%,.3);
         }
         .playindex{
             background-color: #fff;
@@ -58,7 +60,9 @@
             border-radius: 10px;
             background-color: red;
             float: left;
-            margin-left: 8px;
+            margin-left: 4px;
+			margin-right: 4px;
+			margin-top:3px;
 
         }
         #myimg{
@@ -97,7 +101,7 @@
         //开始显示的是imgArr[0]这个图片
         index=0;
         //自动轮播
-        autoRun = setInterval(_right,2000);
+        //autoRun = setInterval(_right,2000);
     }
     //往右
     function _right() {
@@ -106,6 +110,7 @@
             index=0;
         }
         img.src=imgArr[index];
+        _autoIndex(index);
     }
     //往左
     function _click() {
@@ -114,6 +119,7 @@
             index=imgArr.length-1;
         }
         img.src=imgArr[index];
+        _autoIndexL(index);
     }
     //点击具体的某个数字
     function chilkNumber(num) {
@@ -129,7 +135,25 @@
         autoRun = setInterval(_right,2000);
     }
 
+	function _autoIndex(index){
+        var pindex = document.getElementsByClassName("playindex");
+        pindex[index].style.background="white";
+        var setIndex = index-1;
+        if(setIndex < 0){
+            setIndex = pindex.length-1;
+        }
+        pindex[setIndex].style.background="red";
+	}
 
+    function _autoIndexL(index){
+        var pindex = document.getElementsByClassName("playindex");
+        pindex[index].style.background="white";
+        var setIndex = index+1;
+        if(setIndex >= pindex.length){
+            setIndex = 0;
+        }
+        pindex[setIndex].style.background="red";
+    }
 
 
 </script>
