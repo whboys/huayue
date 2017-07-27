@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: auto;
+            padding: 0px;
+        }
+        #main{
+            width: 550px;
+            height: 250px;
+            position: relative;
+        }
+        .min{
+            width: 100px;
+            height: 50px;
+            border: 1px solid blue;
+            border-radius: 20px;
+            background-color: #0979a5;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            color: white;
+        }
+        .start{
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            background-color: green;
+            color: red;
+            font-size: 28px;
+            border-radius: 25px;
+            top: 100px;
+            left: 200px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="children">
+            <div class="min" style="left:0px;top: 0px;">1号选手</div>
+            <div class="min" style="left:150px;top: 0px;">2号选手</div>
+            <div class="min" style="left:300px;top: 0px;">3号选手</div>
+            <div class="min" style="left:450px;top: 0px;">4号选手</div>
+            <div class="min" style="left:450px;top: 100px;">5号选手</div>
+            <div class="min" style="left:450px;top: 200px;">6号选手</div>
+            <div class="min" style="left:300px;top: 200px;">7号选手</div>
+            <div class="min" style="left:150px;top: 200px;">8号选手</div>
+            <div class="min" style="left:0px;top: 200px;">9号选手</div>
+            <div class="min" style="left:0px;top: 100px;">10号选手</div>
+        </div>
+        <input type="button"  value="Start" id="start" class="start" onclick="runStart()"/>
+    </div>
+    <script src="js/public.js"></script>
+    <script>
+        /*
+        * 点名卡思路
+        * 1.页面布局，所有的div绝对定位，开始按钮和选手的按钮不能为兄弟关系
+        * 2.在window.onload函数中获得所有的儿子，注意儿子不能包含文本节点，声明一个全局变量index=0 表示是当前红色背景选手下标
+        * 3.给开始按钮绑定事件_start()
+        * 4.事件中用for循环完成将所有的选手按钮背景改变成蓝色，然后将index%10这个按钮背景改成红色。index++
+        * 5.另外用一个函数去调用_start(),用计时器调用。推荐使用setTimeOut,给开始按钮绑定事件runStart()
+        * 6.在runStart()中生成随机数，0-10【不包含10】作为获奖选手的下标
+        * 7.在函数_start()中判断是否获奖，如果获奖停止计时器
+        * 8.转三圈过后再抽奖，本质就是给随机数加上10*3
+        * 9.调整转速，其实就是调整setTimeout后面的时间
+        * 10.点击开始过后，将按钮状态改变
+        * 11.在runStart中奖index归0，以便于下一次调用
+        * */
+
+        window.onload=function () {
+             parent=document.getElementById("children");
+             childs=searchChilds(parent);
+             index = 0;//表示当前显示背景为红色的div的下标
+             flagTimeout=""
+             j=0;//获奖选手的下标
+        }
+
+        function runStart(){
+            flagTimeout=setTimeout(_start,200);
+            //生成获奖下标
+            j=Math.floor(Math.random()*10)+40;
+            //获得按钮 然后停止按钮
+            document.getElementById('start').setAttribute("disabled",'disabled');//设置属性
+            //点击第二次抽奖的时候index要归0
+            index=0;
+        }
+        function _start() {
+            for(var i=0;i<childs.length;i++){
+                childs[i].style.backgroundColor="#0979a5";
+            }
+            console.log(index);
+            childs[index%10].style.backgroundColor="red";//取模
+            if(index==j){
+                clearTimeout(flagTimeout);
+                var userName=childs[index%10].innerText;
+                console.log("恭喜您"+userName+"抽取本次奖品");
+                document.getElementById('start').removeAttribute("disabled");//设置属性
+                //document.getElementById('start').isDisabled=false;
+            }
+            else{
+                index++;
+                clearTimeout(flagTimeout);
+                //前两圈快
+                if(index<=20){
+                    time=500-index*20;
+                    flagTimeout=setTimeout(_start,time);
+                }
+                else{
+                    time=500+(index-20)*20;
+                    flagTimeout=setTimeout(_start,time);
+                }
+
+            }
+
+
+        }
+    </script>
+</body>
+</html>

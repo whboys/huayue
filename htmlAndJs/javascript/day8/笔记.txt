@@ -1,0 +1,60 @@
+分析：
+window.document.getElementById('id名');
+在window.document对象中通过id获取一个标签对象
+window.document.getElementsByTagName('标签名');
+在window.document对象中通过标签名获取对象数组
+
+<body>
+    <div id='myid'>
+      <a></a>
+      <a></a>
+      <a></a>
+    </div>
+    <p></p>
+    <a></a>
+</body>
+
+var arr = window.document.getElementsByTagName('div');
+就选页面上只有一个目标标签，那么返回的一样是一个数组，arr[0]是我们的目标标签
+arr[0].getElementsByTagName('a');
+在arr[0]对象里面找到所有的a标签，返回数组。
+
+//图片轮播【无缝滚动】
+
+
+DOM:document object model 文档对象模型
+DOM树：
+   element：就是标签对象
+   知识点: 1、动态改变html元素内容
+          2、访问节点的方法【获取标签对象】
+          3、节点样式的修改
+          4、节点的类型
+动态改变元素的内容
+    对象.innerText
+    对象.innerHTML
+访问节点的方法【获取标签对象】
+    window.document.getElementById('id名')
+    window.document.getElementsByTagName('标签名');
+    window.document.getElementsByClassName('标签class类')
+    //封装一个用class类名寻找对象的函数
+节点样式的修改
+    获得css属性值
+      var a = obj.style.样式名
+    设置css属性值
+      obj.style.样式名='样式值'
+节点的类型：分为元素节点【对象】、文本节点【换行、回车、文本】、属性节点【标签的属性】
+区分节点类型是通过 节点.nodetype 获得类型的值
+1：元素节点
+2：属性节点
+3：文本节点：在有些浏览器中会把换行和回车当成文本节点
+
+
+
+
+
+
+BOM:browser object model  浏览器对象模型
+
+
+
+

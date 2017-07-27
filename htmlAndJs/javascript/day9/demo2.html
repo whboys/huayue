@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .autoplayer{
+            margin:0 auto;
+            width:790px;
+            height:340px;
+            background-color: red;
+            position: relative;
+            overflow: hidden;/*内容溢出 隐藏*/
+        }
+        .big{
+            width:6320px;
+            height: 100%;
+            border:1px solid red;
+            margin-left: 0px;
+        }
+        .big img{
+            width:790px;
+            height:340px;
+            float: left;
+        }
+        .autoplayer:hover .leftbtn{
+            opacity: 0.2;
+        }
+        .autoplayer:hover .rightbtn{
+            opacity: 0.2;
+        }
+
+        .leftbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            line-height: 60px;
+            text-align: center;
+            background-color: black;
+            opacity:0;
+        }
+        .rightbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            right:0px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            opacity:0;
+        }
+        .playbtn{
+            position: absolute;
+            height:20px;
+            bottom:20px;
+            left:325px;
+            border-radius: 12px;
+        }
+        .playindex{
+            background-color: #fff;
+            height:15px;
+            width:15px;
+            border-radius: 10px;
+            background-color: white;
+            float: left;
+            margin-left: 8px;
+
+        }
+        #myimg{
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+<div class="autoplayer">
+    <a class="leftbtn" id="left" href="javascript:void(0)"><img class="leftimg" src="images/left.png" width="30" height="60" /></a>
+    <div class="big" id="big">
+        <img src="images/33W58PICNd7_1024.jpg" />
+        <img src="images/79e58PICEtd.jpg" />
+        <img src="images/140-150F1142638.jpg" />
+        <img src="images/160P3142450-4.jpg" />
+        <img src="images/R7JWG26XFT17.jpg" />
+        <img src="images/u=2670750920,766573320&fm=214&gp=0.jpg" />
+        <img src="images/33W58PICNd7_1024.jpg" />
+    </div>
+    <div class="playbtn" id="button">
+        <div class="playindex" style="background-color: red;" ></div>
+        <div class="playindex"></div>
+        <div class="playindex"></div>
+        <div class="playindex"></div>
+        <div class="playindex"></div>
+        <div class="playindex"></div>
+    </div>
+    <a class="rightbtn" onclick="_right()" href="javascript:void(0)"><img class="rightimg" src="images/right.png" width="30" height="60" /> </a>
+</div>
+<script>
+    /*
+    * 第一步：搭建div+css  核心是小包大
+    * 第二步：封装右侧点击事件，定义一个全局的变量index
+    *
+    * */
+    var flagTimeOut;//计时器
+    var index=0;//当前图片下标  -790*(index+1)
+    var falgInterVal;
+    window.onload=function () {
+        window.document.getElementById("left").onclick=function () {
+            _left();
+        }
+
+        //自动
+        falgInterVal=setInterval(_right,4000);
+
+    }
+    //点击右侧按钮
+    function _right(){
+        //清空自动计时器
+        clearInterval(falgInterVal);
+        //获得div的marginLeft属性值
+        var o=document.getElementById("big");
+        var mLeft=o.style.marginLeft;
+        mLeft=parseInt(mLeft);
+        if(isNaN(mLeft)){
+            mLeft=0;
+        }
+        //判断目前位置
+        if(mLeft==-790*(index+1)){
+            index++;
+            if(index>5){
+                index=0;
+                o.style.marginLeft="0px";
+            }
+            clearTimeout(flagTimeOut);
+            changeButton();
+            //自动
+            falgInterVal=setInterval(_right,4000);
+        }
+        else{
+            //每次挪动1px
+            var newLeft=mLeft-5;
+            //改变属性值
+            o.style.marginLeft=newLeft+"px";
+            flagTimeOut=setTimeout(_right,1);
+        }
+    }
+    //左侧点击按钮
+    function _left(){
+        //清空自动计时器
+        clearInterval(falgInterVal);
+        //获得div的marginLeft属性值
+        var o=document.getElementById("big");
+        var mLeft=o.style.marginLeft;
+        mLeft=parseInt(mLeft);
+        if(isNaN(mLeft)){
+            mLeft=0;
+        }
+        //判断目前位置
+        if(mLeft==-790*index){
+            index--;
+            if(index<0){
+                index=5;
+                o.style.marginLeft="-4740px";
+                clearTimeout(flagTimeOut);
+                flagTimeOut=setTimeout(_left,1);
+            }
+            else{
+                clearTimeout(flagTimeOut);
+            }
+            changeButton();
+            //自动
+            falgInterVal=setInterval(_right,4000);
+        }
+        else{
+            //每次挪动1px
+            var newLeft=mLeft+5;
+            //改变属性值
+            o.style.marginLeft=newLeft+"px";
+            clearTimeout(flagTimeOut);
+            flagTimeOut=setTimeout(_left,1);
+        }
+    }
+
+
+
+    //变换按钮
+    function changeButton() {
+        //window.document本身就是一个对象
+        var d=window.document.getElementById('button');
+        //在d对象中通过标签名获得一组div对象  返回的是数组
+        var buttonArr=d.getElementsByTagName('div');
+        //将buttonArr数组中 index下标对应的对象背景改成红色  其它改为白色
+        for(var i=0;i<buttonArr.length;i++){
+            if(i==index){
+                //红色背景
+                buttonArr[i].style.backgroundColor='red';
+            }
+            else{
+                //白色背景
+                buttonArr[i].style.backgroundColor='white';
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

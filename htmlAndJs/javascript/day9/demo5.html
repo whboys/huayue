@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li id="three">3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <input type="button" value="第三个变红色" onclick="test3()"/>
+    <input type="button" value="第二个变蓝色" onclick="test2()"/>
+    <input type="button" value="第四个变绿色" onclick="test4()"/>
+    <input type="button" value="第五个变红色" onclick="test5()"/>
+    <input type="button" value="全部变红" onclick="allRed()"/>
+<script>
+    function test3() {
+        var l=document.getElementById("three");
+        l.style.color='red';
+    }
+    function test2() {
+        var l=document.getElementById("three");
+        var lp = searchPre(l);
+        lp.style.color='blue';
+    }
+    function test4() {
+        var l=document.getElementById("three");
+        ln=searchNext(l);
+        ln.style.color='green';
+    }
+    function test5() {
+        var l=document.getElementById("three");
+        //lnn=searchNext(searchNext(l));
+        ln=searchNext(l);
+        lnn=searchNext(ln);
+        lnn.style.color="red";
+    }
+    function allRed() {
+        var l=document.getElementById("three");
+        var ul = l.parentNode;
+        var liArr = ul.childNodes;
+        for(var i = 0;i<liArr.length;i++){
+            liArr[i].style.color='red';
+        }
+    }
+</script>
+</body>
+</html>

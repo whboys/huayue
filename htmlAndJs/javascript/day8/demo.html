@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .autoplayer{
+            margin:0 auto;
+            width:790px;
+            height:340px;
+            background-color: red;
+            position: relative;
+        }
+        .autoplayer:hover .leftbtn{
+            opacity: 0.2;
+        }
+        .autoplayer:hover .rightbtn{
+            opacity: 0.2;
+        }
+
+        .leftbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            line-height: 60px;
+            text-align: center;
+            background-color: black;
+            opacity:0;
+        }
+
+
+
+
+        .rightbtn{
+            width:30px;
+            height:60px;
+            position: absolute;
+            top:140px;
+            right:0px;
+            line-height: 60px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            opacity:0;
+        }
+        .playbtn{
+            position: absolute;
+            height:20px;
+            bottom:20px;
+            left:325px;
+            border-radius: 12px;
+        }
+        .playindex{
+            background-color: #fff;
+            height:15px;
+            width:15px;
+            border-radius: 10px;
+            background-color: white;
+            float: left;
+            margin-left: 8px;
+
+        }
+        #myimg{
+            width: 790px;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+<div class="autoplayer">
+    <a class="leftbtn" onclick="_left()" id="left" href="javascript:void(0)"><img class="leftimg" src="images/left.png" width="30" height="60" /></a>
+    <img id="myimg" src="images/33W58PICNd7_1024.jpg" />
+    <div class="playbtn" onmouseout="_start()" id="button">
+        <div class="playindex" style="background-color: red;" onmouseover="chilkNumber(0)"></div>
+        <div class="playindex" onmouseover="chilkNumber(1)"></div>
+        <div class="playindex" onmouseover="chilkNumber(2)"></div>
+        <div class="playindex" onmouseover="chilkNumber(3)"></div>
+        <div class="playindex" onmouseover="chilkNumber(4)"></div>
+        <div class="playindex" onmouseover="chilkNumber(5)"></div>
+    </div>
+    <a class="rightbtn" onclick="_right()" href="javascript:void(0)"><img class="rightimg" src="images/right.png" width="30" height="60" /> </a>
+</div>
+<script>
+    /*
+    * 1、第一步: 将所有的图片路径以及名称 放到一个数组里面
+    * 2、第二步: 获得到我们需要去修改的标签对象
+    * 3、第三步：设置一个全局变量index 去代表当前所显示图片的下标,设置一个全局的计时器
+    * 4、第四步：封装右侧点击事件_right() 事件内容 index++ 然后改变图片的src属性 判断index的范围
+    * 5、第五步：照第四步完成左侧的点击事件封装 _left()
+    * 6、第六步：完成自动轮播 核心：每个一个时间段执行一次_right()
+    * 7、第七步：完成顺序按钮的鼠标悬停事件chilkNumber(); 核心：停止计时器，改变index为当前下标，然后显示当前图片
+    * 8、第八步：完成顺序按钮的鼠标移出事件_start();停止计时器，重新开始计时器
+    * 9、第九步：完成按钮颜色切换的函数的封装：获得按钮父对象b，然后在对象b中使用getElementsByTagName('div'),获得按钮数组buttonArr，然后循环buttonArr。
+    * */
+    var imgArr=new Array();
+    var img;
+    var index=0;
+    var flagTimeOut;
+    window.onload=function(){
+        imgArr[0]='images/33W58PICNd7_1024.jpg';
+        imgArr[1]='images/79e58PICEtd.jpg';
+        imgArr[2]='images/140-150F1142638.jpg';
+        imgArr[3]='images/160P3142450-4.jpg';
+        imgArr[4]='images/R7JWG26XFT17.jpg';
+        imgArr[5]='images/u=2670750920,766573320&fm=214&gp=0.jpg';
+        //需要改变的标签
+        img=document.getElementById("myimg");
+        flagTimeOut=setTimeout(_right,2000);
+    }
+    //点击右侧按钮的事件
+    function _right() {
+        index++;
+        if(index>=imgArr.length){
+            index=0;
+        }
+        img.src=imgArr[index];
+        changeButton();//改按钮颜色
+        clearTimeout(flagTimeOut);
+        flagTimeOut=setTimeout(_right,2000);//延迟2秒
+    }
+    //点击左侧按钮的事件
+    function _left() {
+        index--;
+        if(index<0){
+            index=imgArr.length-1;
+        }
+        img.src=imgArr[index];
+        changeButton();//改按钮颜色
+        clearTimeout(flagTimeOut);
+        flagTimeOut=setTimeout(_right,2000);//延迟2秒
+    }
+    //点击按钮
+    function chilkNumber(num) {
+        index=num;
+        img.src=imgArr[index];
+        changeButton();//改按钮颜色
+        clearTimeout(flagTimeOut);
+    }
+    //鼠标移出
+    function _start() {
+        clearTimeout(flagTimeOut);
+        flagTimeOut=setTimeout(_right,2000);//延迟2秒
+    }
+    //变换按钮
+    function changeButton() {
+        //window.document本身就是一个对象
+        var d=window.document.getElementById('button');
+        //在d对象中通过标签名获得一组div对象  返回的是数组
+        var buttonArr=d.getElementsByTagName('div');
+        //将buttonArr数组中 index下标对应的对象背景改成红色  其它改为白色
+        for(var i=0;i<buttonArr.length;i++){
+            if(i==index){
+                //红色背景
+                buttonArr[i].style.backgroundColor='red';
+            }
+            else{
+                //白色背景
+                buttonArr[i].style.backgroundColor='white';
+            }
+        }
+    }
+    
+    
+    
+</script>
+</body>
+</html>

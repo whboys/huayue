@@ -1,0 +1,12 @@
+var a=new Array(25,230,150,154,151,22,32);
+封装一个函数完成数组排序功能
+
+
+1.完成收货地址
+2.封装一个函数到public.js中
+/*
+* 功能：查找节点的所有子节点 但是儿子中不能有文本节点
+* function name ： searchChild()
+* @param   obj  object
+* @return  objChilds object
+* */

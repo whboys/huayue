@@ -1,0 +1,21 @@
+var d = document.createElement('div');创建一个div对象
+d.className='input'; 给定一个已经有的css样式
+
+createElement()创建元素节点
+createTextNode()创建文本节点
+父亲.appendChild(儿子) 添加一个对象到最后
+remove() 删除节点
+cloneNode() 克隆节点
+
+已知一个对象o，那么它的父对象就是o.parentNode,如果找子节点o.childNodes
+
+节点之间的关系:
+父亲：parentNode
+儿子：childNodes
+上一个兄弟：nextSibling
+下一个兄弟：previousSibling
+
+
+
+
+

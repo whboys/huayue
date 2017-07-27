@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点增加、删除、修改</title>
+    <style>
+        *{
+            margin: auto;
+            padding:0px;
+        }
+        #main{
+            width: 350px;
+            min-height: 50px;
+            border-radius: 5px;
+        }
+        .input{
+            height: 30px;
+            width: 90%;
+            border: 1px solid rgba(0, 0, 255, 0.11);
+            line-height: 30px;
+            margin-top: 8px;
+            text-indent: 15px;
+        }
+        .address{
+            height: 130px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 255, 0.24);
+            line-height: 30px;
+            margin-top: 8px;
+            position: relative;
+        }
+        input{
+            height: 25px;
+            border: none;
+            line-height: 25px;
+            outline: none;
+        }
+        .close{
+            width: 20px;
+            height: 20px;
+            background-color: burlywood;
+            color: red;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 10px;
+            position: absolute;
+            right: -10px;
+            top:-10px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <input type="button" value="添加收货地址" onclick="addPhone()"/>
+    <div class="address">
+        <div class="close" onclick="closeAdd(this)">X</div>
+        <div class="input">
+            收货人姓名：<input type="text" name="phone" placeholder="请输入联系方式"/>
+        </div>
+        <div class="input">
+            收货人电话：<input type="text" name="phone" placeholder="请输入联系方式"/>
+        </div>
+        <div class="input">
+            收货人地址：<input type="text" name="phone" placeholder="请输入联系方式"/>
+        </div>
+    </div>
+</div>
+
+<script>
+    //关闭
+    function closeAdd(o) {
+        //o就代表自己
+        var m=document.getElementById("main");
+        var address=m.childNodes;
+        console.log(address);
+        if(address.length>5){
+            o.parentNode.remove();
+        }
+
+    }
+    function addPhone() {
+        /*var m=document.getElementById("main");
+        //m下面div的数量
+        var num=m.getElementsByTagName("div").length;
+        if(num<5){
+            //动态的创建一个div
+            var d=document.createElement('div');
+            //赋予样式 给定一个已经有的css样式
+            d.className='input';
+            //d.class="input";
+            //创建一个文本节点
+            var t=document.createTextNode("联系电话：");
+            d.appendChild(t);//将文本节点添加到div里面
+            //创建input元素节点
+            var i=document.createElement("input");
+            i.type='text';
+            i.name='phone';
+            i.placeholder='请输入联系方式';
+            d.appendChild(i);
+            //将d对象插入到main的最后
+            m.appendChild(d);
+        }*/
+        var m=document.getElementById("main");
+        var address=m.childNodes[3];
+        //console.log(address);
+        var newAddress=address.cloneNode(true);
+        newAddress.id="";
+        //克隆过后删除节点内容
+        var input = newAddress.getElementsByTagName("input");
+        for(var i=0;i<input.length;i++){
+            input[i].value="";
+        }
+        m.appendChild(newAddress);
+    }
+</script>
+</body>
+</html>

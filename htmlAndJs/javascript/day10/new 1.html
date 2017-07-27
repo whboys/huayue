@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta charset="utf-8" />
+</head>
+<style>
+	*{margin:0; padding:0;}
+	.all{
+		width:500px;
+		height:500px;
+		margin:auto;
+		border-radius:100%;
+		background:#CCC;
+		position:relative;
+		overflow:hidden;
+		border: 20px solid darkred;
+
+	}
+
+	.all1{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid red;
+		position:absolute;
+		left:100px;
+		top:250px;
+		transform: rotate(0deg);
+	}
+	.all2{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid blue;
+		position:absolute;
+		left:-20px;
+		top:191px;
+		transform: rotate(53deg);
+	}
+	.all3{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid yellow;
+		position:absolute;
+		left:-45px;
+		top:59px;
+		transform: rotate(106deg);
+	}
+	.all4{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid green;
+		position:absolute;
+		left:46px;
+		top:-41px;
+		transform: rotate(159deg);
+	}
+	.all5{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid orangered;
+		position:absolute;
+		left:179px;
+		top:-26px;
+		transform: rotate(212deg);
+	}
+	.all6{
+		width:0;
+		height:0;
+		border-left:150px solid transparent;
+		border-right:150px solid transparent;
+		border-bottom:300px solid red;
+		position:absolute;
+		left:249px;
+		top:88px;
+		transform: rotate(265deg);
+	}
+	.zz {
+		width:5px;
+		height: 200px;
+		background-color: white;
+		position:absolute;
+		top: 52px;
+		left: 247.5px;
+		border-radius: 5px 5px 0px 0px;
+
+	}
+	#bin{
+		width:500px;
+		height:500px;
+		margin:auto;
+		border-radius:100%;
+		background:#CCC;
+		position:relative;
+		overflow:hidden;
+
+	}
+</style>
+<body>
+	<div class="all">
+		<div id="bin" style="transform:rotate(10deg);">
+			<div class="all1"></div>
+			<div class="all2"></div>
+			<div class="all3"></div>
+			<div class="all4"></div>
+			<div class="all5"></div>
+			<div class="all6"></div>
+		</div>
+		<div class="zz"></div>
+	</div>
+	<input type="button" value="start" onclick="_start()"/>
+    <script>
+		window.onload=function () {
+			//什么时候停止  先转三圈再抽奖
+            quan=0;
+			//生成随机数
+			s=Math.ceil(Math.random()*360);
+			//计时器 
+			flagTime="";
+			//快慢调节器
+			nice=50;
+
+
+        }
+        function _start() {
+			var b = document.getElementById("bin");
+			var v = b.style.transform;
+			var a = v.substr(7,4);//截取数字开头的字符串
+			a=parseInt(a);
+			a+=1;
+			//超过360等于0
+			if(a==360){
+			  a=0;
+			  quan++;
+			}
+			b.style.transform="rotate("+a+"deg)";
+            if(a==s&&quan==3){
+			  alert("恭喜中奖用户")
+			}
+			else{
+			  clearTimeout(flagTime);
+              if(quan>=2){
+                  nice+=0.1;
+			  }
+			  else{
+                  nice-=0.1;
+			  }
+			  flagTime = setTimeout(_start,nice);
+			}
+			
+        }
+	</script>
+
+</body>
+</html>

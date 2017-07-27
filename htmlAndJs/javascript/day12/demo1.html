@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监听</title>
+    <style>
+        *{padding: 0px;margin: auto;}
+        .main{
+            position: absolute;
+            width: 39px;
+            height:34px;
+            background-image:url(./tk.gif);
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top:200px;width: 500px;height: 400px;border: 1px solid red;position: relative;background-color: rgba(3,255,155,0.12);">
+       <div id="min" class="main"></div>
+    </div>
+    <script>
+        window.onload=function () {
+            //加载完成过后监听键盘  只要在页面上按下键盘  函数就会相应
+            document.onkeydown = function (e) {
+              var div=document.getElementById("min");
+              //获取div的left和top
+              var left = parseInt(div.style.left);
+              var top  = parseInt(div.style.top);
+              left=isNaN(left)?0:left;
+              top = isNaN(top)?0:top;
+              //e 代表event  e.keyCode 会返回当前按键的ascII编码
+              e=e||e.event;//为了兼容IE
+              //获取按键编码
+              var code =  e.keyCode;
+              if(code==37||code==65){
+                  //向左
+                  if(left-2>=0){
+                      div.style.left=left-2+"px";
+                  }
+                    //改变背景
+                  if(left%4==0){
+                      div.style.backgroundPosition="0px -102px";
+                  }
+                  else{
+                      div.style.backgroundPosition="-40px -102px";
+                  }
+              }
+              else if(code==38||code==87){
+                  //向上
+                  div.style.top=top-2+"px";
+                  //改变背景
+                  if(top%4==0){
+                      div.style.backgroundPosition="-40px 0px";
+                  }
+                  else{
+                      div.style.backgroundPosition="0px 0px";
+                  }
+              }
+              else if(code==39||code==68){
+                  //向右
+                  div.style.left=left+2+"px";
+                  //改变背景
+                  if(left%4==0){
+                      div.style.backgroundPosition="0px -34px";
+                  }
+                  else{
+                      div.style.backgroundPosition="-40px -34px";
+                  }
+              }
+              else if(code==40||code==83){
+                  //向下
+                  if(top+2<=380){
+                      div.style.top=top+2+"px";
+                  }
+                  //改变背景
+                  if(top%4==0){
+                      div.style.backgroundPosition="0px -68px";
+                  }
+                  else{
+                      div.style.backgroundPosition="-40px -68px";
+                  }
+              }
+            }
+        }
+    </script>
+</body>
+</html>

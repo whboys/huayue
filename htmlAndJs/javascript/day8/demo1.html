@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: auto;padding: 0px;}
+        .main{height: 200px;width: 300px;background-color: antiquewhite}
+        .main img{width: 200px;height: 200px;margin-left: 100px;}
+    </style>
+</head>
+<body>
+  <div class="main" onmouseover="runLeft()" onmouseout="runRight()">
+        <img id="img" src="images/160P3142450-4.jpg"/>
+  </div>
+  <script>
+      //案例中心思想：鼠标悬停到div上的时候，让图片向左移动50个px
+      window.onload=function () {
+          img=document.getElementById('img');
+          flagInterVal='';
+      }
+      //鼠标悬停事件
+      function runLeft() {
+          clearInterval(flagInterVal);
+          flagInterVal = setInterval(_left,10);
+      }
+      //鼠标移出事件
+      function runRight() {
+          clearInterval(flagInterVal);
+          flagInterVal = setInterval(_right,10);
+      }
+      //每次往左边移动1px
+      function _left(){
+          var p=img.style.marginLeft;
+          p=parseInt(p);
+          p=isNaN(p)?100:p;
+          if(p<=50){
+            clearInterval(flagInterVal)
+          }
+          else{
+            img.style.marginLeft=(p-1)+"px";
+          }
+      }
+      //每次往右边移动1px
+      function _right() {
+          var p=img.style.marginLeft;
+          p=parseInt(p);
+          p=isNaN(p)?100:p;
+          if(p>=100){
+              clearInterval(flagInterVal)
+          }
+          else{
+              img.style.marginLeft=(p+1)+"px";
+          }
+      }
+  </script>
+</body>
+</html>

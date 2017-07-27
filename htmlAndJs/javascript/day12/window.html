@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="background-color: blue;width: 200px;height: 300px;">
+         <input id="userName" type="text" name="userName" placeholder="请选择用户..."/>
+    </div>
+    <iframe name="myiframe" id="myiframe" height="500px" width="500px;" src="user.html"></iframe>
+    <script>
+        window.onload=function () {
+            //如果是直接调用iframe里面的方法
+            //window.frames[0].aa();
+            //如果要获得里面的节点
+            var li   = window.frames[0].document.getElementById("nice");
+            console.log(li);
+            li.onclick=function () {
+                var name = this.innerText;
+                var input = window.document.getElementById("userName");
+                input.value=name;
+            }
+        }
+    </script>
+
+
+</body>
+</html>

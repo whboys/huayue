@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript 数组冒泡排序</title>
+</head>
+<body>
+    <script>
+        //算法  冒泡排序  二叉排序
+        var a=new Array(25,230,150,154,151,22,32);
+
+        function arrSort(arr) {
+            //window.document.write(arr.sort());
+            for(var i=0;i<arr.length-1;i++){
+                //arr[i] 目标
+                for(var j=i+1;j<arr.length;j++){
+                    //arr[i]和arr[j] 如果arr[j]<arr[i]
+                    if(arr[i]>arr[j]){
+                        var temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(arrSort(a));
+
+
+
+
+
+
+    </script>
+</body>
+</html>

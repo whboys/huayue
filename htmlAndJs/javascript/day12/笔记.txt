@@ -1,0 +1,102 @@
+今天是将BOM、下午讲监听【键盘、鼠标】
+
+礼拜五 正则表达式
+
+礼拜一 面向对象
+
+Window    窗口对象
+在iframe中操作父对象的节点
+//子对象操作父对象
+function changName(o) {
+    var name = o.innerText;
+    //window.parent当成父亲对象的window
+    window.parent.document.getElementById('userName').value=name;
+}
+//父窗口操作子窗口
+window.onload=function () {
+    //如果是直接调用iframe里面的方法
+    //window.frames[0].aa();
+    //如果要获得里面的节点
+    var li   = window.frames[0].document.getElementById("nice");
+    console.log(li);
+    li.onclick=function () {
+        var name = this.innerText;
+        var input = window.document.getElementById("userName");
+        input.value=name;
+    }
+}
+
+//理论
+window.frames[0] 可以获得页面上所有的iframe对象，window.frames[0]可以当成子窗口中的window对象
+//属性
+window.closed //返回窗口是否关闭
+window.defaultStatus //获取或者设置状态栏文本
+window.document  //窗口文档
+window.history //窗口历史
+window.innerheight	返回窗口的文档显示区的高度。
+window.innerwidth	返回窗口的文档显示区的宽度。
+window.outerheight	返回窗口的文档显示区的高度+浏览器上面。
+window.outerwidth	返回窗口的文档显示区的宽度+滚动条和边框。
+window.location     定位对象
+window.name         窗口名称
+window.status       设置状态栏的文本
+
+//方法
+window.close() 关闭窗口事件
+window.open()  打开一个外部的连接  a = window.open('user.html','用户列表','height=300,width=400');
+window.alert()
+window.prompt()
+window.confirm()  带选择的提示框
+
+
+Navigator 浏览器本身的信息对象
+
+Screen    屏幕对象
+
+History   历史对象
+
+Location  定位对象
+
+
+手册地址：http://www.w3school.com.cn/jsref/dom_obj_window.asp
+
+//监听键盘
+document.onkeypress=function(){
+ //监听不了方向键
+}
+document.onkeydown=function(e){
+ //可以监听所有键
+ e=e||e.event;
+ var code = e.keyCode;
+}
+
+//监听鼠标
+var flag=false;//记录鼠标是否在img这个div上面按下  而且没有松开
+window.onload=function () {
+    //给div绑定onmousedown 让flag=true
+    var div = document.getElementById("img");
+    div.onmousedown=function () {
+        flag=true;
+    }
+    //当鼠标移出松开的时候，是不会跟随，flag=false
+    document.onmouseup=function () {
+        flag=false;
+    }
+    document.onmousemove=function (e) {
+        //鼠标只要在移动就能响应这个事件
+        e=e||e.event;
+        //获取鼠标当前位置
+        //console.log(e.clientX)
+        var x=parseInt(e.clientX);
+        var y=parseInt(e.clientY);
+        console.log(flag);
+        //只有鼠标被按下  没有松开的时候才会跟随
+        if(flag){
+            var div = document.getElementById("img");
+            div.style.top=y+"px";
+            div.style.left=x+"px";
+        }
+
+
+    }
+

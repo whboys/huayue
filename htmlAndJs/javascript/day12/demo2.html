@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监听鼠标</title>
+</head>
+<body>
+    <div id="img" style="position: absolute;width: 200px;height: 200px;border: 1px solid red" >
+        <img src="zz.png" style="width: 200px;height: 200px;"/>
+    </div>
+
+
+    <script>
+        //监听鼠标
+        /*
+        *  1、定义一个全局的变量作为标记  来确定div是否跟随鼠标移动
+        *  2、确定标记改变的时机，1.在div上面按下鼠标左键的时候 2。在文档上松开鼠标的时候
+        *  3、监听鼠标 document.onmousemove=function(e){}
+        *  4、得到当前鼠标相对窗口的位置
+        *  5、判断标记，如果确定div跟随鼠标移动，那么就改变div的style样式
+        * */
+        var flag=false;//记录鼠标是否在img这个div上面按下  而且没有松开
+        window.onload=function () {
+            //给div绑定onmousedown 让flag=true
+            var div = document.getElementById("img");
+            div.onmousedown=function (e) {
+                flag=true;
+                //记录相对的差值
+                var x=parseInt(e.clientX);
+                var y=parseInt(e.clientY);
+                var l=parseInt(this.style.left);
+                var t=parseInt(this.style.top);
+                l=isNaN(l)?0:l;
+                t=isNaN(t)?0:t;
+                cx=x-l;
+                cy=y-t;
+            }
+            //当鼠标移出松开的时候，是不会跟随，flag=false
+            document.onmouseup=function () {
+                flag=false;
+            }
+            document.onmousemove=function (e) {
+                //鼠标只要在移动就能响应这个事件
+                e=e||e.event;
+                //获取鼠标当前位置
+                //console.log(e.clientX)
+                var x=parseInt(e.clientX);
+                var y=parseInt(e.clientY);
+                console.log(flag);
+                //只有鼠标被按下  没有松开的时候才会跟随
+                if(flag){
+                    var div = document.getElementById("img");
+                    div.style.top=y-cy+"px";
+                    div.style.left=x-cx+"px";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
