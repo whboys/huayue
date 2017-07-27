@@ -1,0 +1,285 @@
+*{
+    margin:auto;
+    padding:0px;
+}
+.header{
+    width:100%;
+    height:440px;
+    background:url(http://ossweb-img.qq.com/images/lol/v2/banner/pic-back-v8.jpg) no-repeat center 90px;
+}
+.header-top{
+    width:100%;
+    height:90px;
+    border:1px solid red;
+    background: #0b0b0b;
+}
+.header-center{
+    width:1240px;
+    height:100%;
+    border:1px solid green;
+    position:relative;
+}
+.header-logo{
+    width:190px;
+    height:100px;
+    border:1px solid yellow;
+    position:absolute;
+    left:0px;
+}
+.header-nav{
+    width:600px;
+    height:100%;
+    background:green;
+    margin-left:190px;
+}
+.header-nav li{
+    width:120px;
+    height:90px;
+    list-style: none;
+    float:left;
+    text-align:center;
+    padding-top:30px;
+}
+.header-nav a{
+    color: #fafafa;
+    font-size: 18px;
+    text-decoration: none;
+}
+.header-nav span{
+    font-size: 10px;
+    color: #838383;
+}
+
+
+
+
+
+
+
+
+.main{
+    width:1240px;
+    height:715px;
+}
+.let{
+    width:820px;
+    height:100%;
+    float:left;
+}
+.top-let{
+    width:100%;
+    height:53px;
+    position:relative;
+    border-bottom: 3px solid #ebebeb;
+}
+.tab-title{
+    font-size:26px;
+    line-height:50px;
+    color:#404040;
+    margin-right:40px;
+    float:left;
+    font-weight: normal;
+}
+.tab-ul{
+    float:left;
+    list-style-type:none;
+    position:absolute;
+    right:0px;
+    top:17px;
+}
+.navLiOut{
+    width:168px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    font-size:18px;
+    color: #555555;
+    font-weight: 900;
+    border-bottom: 3px solid #ebebeb;
+    float:left;
+}
+.navLiHover{
+    width:168px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    font-size:18px;
+    color: #d1ab57;
+    font-weight: 900;
+    border-bottom: 3px solid #d1ab57;
+    float:left;
+}
+.lft-box{
+    width:100%;
+    height:576px;
+    margin-top:24px;
+}
+.lft-footer{
+    width:100%;
+    height:43px;
+    line-height:43px;
+    text-align: center;
+    margin-top:15px;
+}
+.lft-footer a{
+    font-size:16px;
+    text-decoration:none;
+    color: #515151;
+}
+.lft-footer em{
+    color:#d1ab57;
+    font-style: normal;
+}
+.lft-box-top{
+    width:100%;
+    height:124px;
+}
+.lft-box-topR{
+    width:600px;
+    height:124px;
+    float:right;
+}
+.lia{
+    list-style-type: none;
+    font-size: 36px;
+    font-weight: bold;
+    color: #3e3e3e;
+    line-height: 50px;
+    height: 50px;
+
+}
+.lib{
+    list-style-type: none;
+    height: 60px;
+    font-size: 14px;
+    color: #898989;
+    line-height: 1.5;
+
+}
+.lft-box-topC{
+    list-style-type:none;
+    margin-top:24px;
+}
+.lft-box-topC li{
+    width:100%;
+    height:35px;
+    line-height:35px;
+    margin-bottom:9px;
+    position:relative;
+}
+.lft-box-topC span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 68px;
+    height: 35px;
+    line-height: 35px;
+    background: #ebebeb;
+    text-align: center;
+    color: #7a7a7a;
+}
+.lft-box-topC a{
+    text-decoration:none;
+    color: #555555;
+    padding: 0 55px 0 90px;
+}
+.date{
+    position: absolute;
+    right: -750px;
+    top:0px;
+    width:50px;
+    height:35px;
+    line-height: 35px;
+    text-align: right;
+    color: #bababa;
+}
+.rgt{
+    width:400px;
+    height:100%;
+    float:right;
+}
+.top-right{
+    width:100%;
+    height:53px;
+}
+.top-rgt-ul{
+    list-style-type:none;
+    float:left;
+}
+.top-rgt-ul li {
+    float: left;
+    height: 35px;
+    width:133px;
+    line-height:35px;
+    text-align:center;
+    margin-top:12px;
+    color: #d1ab57;
+    font-weight: bold;
+    border-bottom: 3px solid #d1ab57;
+}
+.top-rgt-img{
+    margin-top:24px;
+    width:400px;
+    height:420px;
+    position:relative;
+}
+.top-rgt-images{
+    width:410px;
+    height:420px;
+    position:absolute;
+    overflow:hidden;
+}
+.top-rgt-img img{
+    width:195px;
+    height:70px;
+    margin-bottom:10px;
+    margin-right:10px;
+    overflow: hidden;
+    float:left;
+}
+.top-rgt-font{
+    text-align:right;
+    color:#9f9f9f;
+    margin-right:11px;
+    font-size:13px;
+}
+.right-logo{
+    width:400px;
+    height:90px;
+    margin-top:42px;
+    margin-bottom:20px;
+}
+.font-bom{
+    width:400px;
+    height:70px;
+    font-size:12px;
+    color:#878787;
+}
+.font-bom{
+    color: #404040;
+    font-size: 14px;
+    font-weight: normal;
+    position:relative;
+}
+.font-bom p{
+    font-size: 12px;
+    color: #878787;
+    float:right;
+    margin-right:15px;
+}
+.font-bom h5{
+   float:right;
+   margin-right:118px;
+}
+.ts{
+    width:70px;
+    height:70px;
+    position:absolute;
+    font-size:20px;
+    text-align: center;
+    line-height: 35px;
+    border:1px solid #BFBFBF;
+    font-weight:bold;
+    color:#BFBFBF;
+    top:-10px;
+}

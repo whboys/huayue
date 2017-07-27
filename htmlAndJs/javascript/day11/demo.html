@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="nice1">
+        <ul>
+            <li>菜谱1</li>
+            <li>菜谱1</li>
+            <li>菜谱1</li>
+            <li>菜谱1</li>
+            <li>菜谱1</li>
+            <li>菜谱1</li>
+        </ul>
+    </div>
+    <div id="nice2" onclick="doMain(this)">传递参数的this</div>
+<script>
+    window.onload=function () {
+        //绑定事件一般放在onload里面  因为onload是页面加载完成过后才会被执行 onload里面是不能留有名称的函数
+
+        //第二种this  绑定事件内部的this
+        var div = document.getElementById("nice1");
+
+        var liArr = div.getElementsByTagName("li");
+
+        //循环数组绑定事件
+        for(var i=0;i<liArr.length;i++){
+            liArr[i].onmouseover = function () {
+              //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+              this.style.color="red";
+            }
+            liArr[i].onmouseout = function () {
+                //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+                this.style.color="#999";
+            }
+        }
+        /*
+        liArr[0].onmouseover = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="red";
+        }
+        liArr[0].onmouseout = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="#999";
+        }
+        liArr[1].onmouseover = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="red";
+        }
+        liArr[1].onmouseout = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="#999";
+        }
+        liArr[2].onmouseover = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="red";
+        }
+        liArr[2].onmouseout = function () {
+            //this 就代表事件【onmouseover】前面的对象【liArr[i]】
+            this.style.color="#999";
+        }*/
+
+
+
+    }
+
+    //传递参数[实际的参数]的this
+    function doMain(obj) {
+        //a代表什么 id="nice2"这个div
+        obj.style.color="red";
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
